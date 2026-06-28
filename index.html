@@ -20,10 +20,12 @@
   <body>
     <!-- NAVBAR -->
     <header class="site-header">
-      <button class="nav-button">
-        <span class="nav-toggle"></span>
-      </button>
-      <nav class="nav-bar-header">
+      <nav class="navbar">
+        <button class="hamburger-button" aria-label="navigation button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <a href="/" class="logo" aria-label="Yiamarin Apartments Home">
           <svg viewBox="-50 0 500 460" xmlns="http://www.w3.org/2000/svg">
             <!-- Χρώμα -->
@@ -119,7 +121,7 @@
             </text>
           </svg>
         </a>
-        <ul class="nav-menu">
+        <ul class="nav-menu" aria-label="navigation links">
           <li><a href="#stay">The Stay</a></li>
           <li><a href="#apartments">Apartments</a></li>
           <li><a href="#location">Location</a></li>
@@ -150,7 +152,7 @@
       <section class="hero">
         <div class="hero-wrapper">
           <div class="hero-typography">
-            <span class="eyebrow">Holiday Apartments in Crete</span>
+            <span class="eyebrow-hero">Holiday Apartments in Crete</span>
             <h1>
               Yiamarin,<br />
               Quiet island living
@@ -216,12 +218,13 @@
       </section>
 
       <!-- THE STAY -->
-      <section id="stay" class="stay">
+      <section id="stay" class="stay" aria-labelledby="stay-paragraph ">
         <div class="stay-wrapper">
-          <div class="stay-images">
-            <div class="stay-image">
-              <img src="yiamarin/yiamarin-sofa.jpg" alt="" />
-            </div>
+          <div class="stay-image">
+            <img
+              src="yiamarin/yiamarin-sofa.jpg"
+              alt="Sofa area inside the Yiamarin apartment with natural light, Istro"
+            />
             <aside class="stay-note">
               <svg
                 class="stay-note-svg"
@@ -326,11 +329,6 @@
                 >Spotless comfort, quiet surroundings, welcoming stay.</strong
               >
             </aside>
-            <img
-              class="stay-image-bedroom"
-              src="cozy/garden.JPG"
-              alt="yiamarin apartment living room overlooking kitchen & bedroom, located at istro, near voulisma beach & agios nikolaos city"
-            />
           </div>
 
           <div class="stay-typography">
@@ -345,7 +343,7 @@
               and the kind of cleanliness guests repeatedly notice. Spaces that
               feel ready from the first minute.
             </p>
-            <span class="paragraph-eyebrow">bright · quiet</span>
+            <span class="paragraph-eyebrow">light · calm · quiet</span>
 
             <div class="stay-divider"></div>
             <div class="stay-highlights-wrapper">
@@ -417,83 +415,36 @@
                   alt="Exterior view of Yiamarin Apartments in Istro, Crete with calm holiday setting"
                 />
                 <span class="apt-box-number">Apartment 01</span>
-              </div>
-              <div class="apartment-details">
+                <div class="apartment-img-overlay"></div>
                 <h3>Cozy Cottage</h3>
-                <span class="box-eyebrow"></span>
+                <span class="apt-h3-eyebrow"></span>
+              </div>
+
+              <div class="apartment-details">
                 <p>
                   Warm interiors designed for slow mornings and relaxed
                   evenings.
                 </p>
-                <span class="diva"></span>
-                <div class="apartment-details-bottom">
-                  <div class="apt-box-amenities">
-                    <!-- GUESTS -->
-                    <article class="box-amenities">
-                      <svg
-                        class="lucide lucide-users-icon lucide-users"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-users-icon lucide-users"
-                      >
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                        <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                        <circle cx="9" cy="7" r="4" />
-                      </svg>
-                      <span>2-4 Guests</span>
-                    </article>
-                    <div class="apt-box-divider-column"></div>
-                    <!-- HOUSE SQM -->
-                    <article class="box-amenities">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-house-icon lucide-house"
-                      >
-                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-                        <path
-                          d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                        />
-                      </svg>
-                      <span>35&nbsp;m²</span>
-                    </article>
-                    <div class="apt-box-divider-column"></div>
-                  </div>
-                  <div class="apartment-link">
-                    <a href=""
-                      >Explore Cozy Cottage<svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="apartments-arrow lucide lucide-move-right-icon lucide-move-right"
-                      >
-                        <path d="M18 8L22 12L18 16" />
-                        <path d="M2 12H22" />
-                      </svg>
-                    </a>
-                  </div>
+                <div class="apartment-link">
+                  <a href=""
+                    >Explore Cozy Cottage<svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="apartments-arrow lucide lucide-move-right-icon lucide-move-right"
+                    >
+                      <path d="M18 8L22 12L18 16" />
+                      <path d="M2 12H22" />
+                    </svg>
+                  </a>
                 </div>
+                <span class="diva"></span>
               </div>
             </div>
 
@@ -504,83 +455,35 @@
                   alt="Exterior view of Yiamarin Apartments in Istro, Crete with calm holiday setting"
                 />
                 <span class="apt-box-number">Apartment 02</span>
+                <div class="apartment-img-overlay"></div>
+                <h3>Yiamarin</h3>
+                <span class="apt-h3-eyebrow"></span>
               </div>
               <div class="apartment-details">
-                <h3>Yiamarin</h3>
-                <span class="box-eyebrow"></span>
                 <p>
                   Clean lines, modern comforts, and a calm contemporary
                   atmosphere.
                 </p>
-                <span class="diva"></span>
-                <div class="apartment-details-bottom">
-                  <div class="apt-box-amenities">
-                    <!-- GUESTS -->
-                    <article class="box-amenities">
-                      <svg
-                        class="lucide lucide-users-icon lucide-users"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-users-icon lucide-users"
-                      >
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                        <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                        <circle cx="9" cy="7" r="4" />
-                      </svg>
-                      <span>2 Guests</span>
-                    </article>
-                    <div class="apt-box-divider-column"></div>
-                    <!-- HOUSE SQM -->
-                    <article class="box-amenities">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-house-icon lucide-house"
-                      >
-                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-                        <path
-                          d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                        />
-                      </svg>
-                      <span>30&nbsp;m²</span>
-                    </article>
-                    <div class="apt-box-divider-column"></div>
-                  </div>
-                  <div class="apartment-link">
-                    <a href=""
-                      >Explore Yiamarin<svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="apartments-arrow lucide lucide-move-right-icon lucide-move-right"
-                      >
-                        <path d="M18 8L22 12L18 16" />
-                        <path d="M2 12H22" />
-                      </svg>
-                    </a>
-                  </div>
+                <div class="apartment-link">
+                  <a href=""
+                    >Explore Yiamarin<svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="apartments-arrow lucide lucide-move-right-icon lucide-move-right"
+                    >
+                      <path d="M18 8L22 12L18 16" />
+                      <path d="M2 12H22" />
+                    </svg>
+                  </a>
                 </div>
+                <span class="diva"></span>
               </div>
             </div>
           </div>
@@ -629,7 +532,7 @@
               within walking distance, while Agios Nikolaos is only a short
               drive away.
             </p>
-            <span class="paragraph-eyebrow">ISTRO · CRETE</span>
+            <span class="paragraph-eyebrows-location">ISTRO · CRETE</span>
             <div class="location-highlights">
               <!-- VOULISMA -->
               <div class="garden location-surrounding">
@@ -727,7 +630,43 @@
         </div>
       </section>
 
-      <section class="reviews"></section>
+      <!-- NEARBY -->
+      <section class="nearby">
+        <div class="nearby-wrapper">
+          <div class="nearby-typography">
+            <span class="nearby-eyebrow">nearby</span>
+            <h2>
+              A handful of places worth slowing down for, all within a short
+              drive.
+            </h2>
+          </div>
+          <div class="nearby-places-wrapper">
+            <article class="nearby-places spinaloga">
+              <img src="images/spinaloga.jpg" alt="" />
+              <span class="nearby-badge">34 min drive + boat</span>
+              <span class="place-category">Island · History</span>
+              <h3>Spinalonga</h3>
+              <p class="pe">A harbour town wrapped around a bottomless lake</p>
+            </article>
+
+            <article class="nearby-places voulismeni">
+              <img src="images/voulismeni.jpg" alt="" />
+              <span class="nearby-badge">16 min drive</span>
+              <span class="place-category">Town · Dining</span>
+              <h3>Agios Nikolaos</h3>
+              <p>A harbour town wrapped around a bottomless lake</p>
+            </article>
+
+            <article class="nearby-places kritsa">
+              <img src="images/kritsa.jpg" alt="" />
+              <span class="nearby-badge">10 min walk</span>
+              <span class="place-category">Beach · Swimming</span>
+              <h3>Kritsa Village</h3>
+              <p>A harbour town wrapped around a bottomless lake</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <!-- BOOK -->
       <section id="book" class="book">
@@ -799,5 +738,6 @@
         </div>
       </nav>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
