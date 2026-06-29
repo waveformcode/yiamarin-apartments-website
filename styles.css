@@ -16,7 +16,6 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --shadow-min: 0 18px 40px rgba(19, 17, 14, 0.1);
   --shadow-mid: 0 18px 40px rgba(19, 17, 14, 0.5);
-  /*--image-border: 1.5px solid white;*/
   --playfair: "Playfair", serif;
   --jost: "Jost", sans-serif;
 }
@@ -40,7 +39,11 @@ body {
 .stay-wrapper,
 .location-wrapper,
 .apartments-wrapper,
-.book-wrapper {
+.book-wrapper,
+.apt-hero-wrapper,
+.apt-about-wrapper,
+.apt-highlights-wrapper,
+.apt-book-wrapper {
   max-width: 1400px;
   margin: 0 auto;
   padding-inline: clamp(1rem, 4vw, 3rem);
@@ -59,7 +62,9 @@ h2 {
 .stay-paragraph,
 .hero-paragraph,
 .apartment-paragraph,
-.book-typography p {
+.book-typography p,
+.apt-hero-paragraph,
+.apt-about-paragraph {
   font-family: "Jost", sans-serif;
   font-size: clamp(1rem, 5vw, 1.2rem);
   font-weight: 400;
@@ -105,16 +110,70 @@ h2 {
   gap: 10px;
   font-size: 0.7rem;
   letter-spacing: 0.4em;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   opacity: 0.8;
   flex-wrap: wrap;
 }
 
 .eyebrow::before {
   content: "";
-  width: 40px;
+  width: 30px;
   height: 1px;
   background: rgba(23, 21, 18, 0.24);
+}
+
+.eyebrow-center {
+  display: flex;
+  color: var(--muted);
+  text-transform: uppercase;
+  gap: 10px;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  opacity: 0.8;
+  align-self: center;
+}
+
+.eyebrow-center::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  align-self: center;
+  background: rgba(23, 21, 18, 0.24);
+}
+
+.eyebrow-center::after {
+  content: "";
+  width: 30px;
+  height: 1px;
+  align-self: center;
+  background: rgba(23, 21, 18, 0.24);
+}
+
+.cta-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85em 1.8em;
+  background-color: #1f1f1f;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.cta-btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85em 1.8em;
+  border: 1px solid #00000033;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 /*==== NAV BAR ===*/
@@ -275,29 +334,6 @@ nav li a {
   margin-top: 55px;
 }
 
-.book-now-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1em 1.5em;
-  background-color: #1f1f1f;
-  color: white;
-  border: none;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-.view-apts {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5em 1.5em;
-  border: 1px solid #00000033;
-  font-size: 1rem;
-  text-decoration: none;
-  color: black;
-}
-
 .hero-visual {
   display: flex;
   align-items: center;
@@ -416,22 +452,6 @@ aside span {
   font-weight: 500;
 }
 
-.stay-note-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  opacity: 0.8;
-}
-
-.stay-note-eyebrow::before {
-  content: "";
-  width: 40px;
-  height: 1px;
-  background: #c09162a1;
-}
-
 aside strong {
   letter-spacing: var(--small-spacing);
   line-height: 1.4;
@@ -471,7 +491,7 @@ aside strong {
   color: rgba(23, 21, 18, 0.35);
   padding-right: 30px;
   letter-spacing: 0.2rem;
-  font-size: var(0.9rem, 3vw, 1.3rem);
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
 }
 
 .stay-highlights strong {
@@ -485,7 +505,7 @@ aside strong {
 }
 
 .stay-highlights p {
-  font-size: clamp(1rem, 5vw, 1rem);
+  font-size: 1rem;
   color: var(--muted);
   letter-spacing: var(--medium-spacing);
   max-width: 40ch;
@@ -499,41 +519,6 @@ aside strong {
   margin: 20px 0;
   width: 100%;
   max-width: 50ch;
-}
-
-/*==== PHOTOS ==== */
-.photo-grid {
-  display: none;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, auto);
-  gap: 10px;
-  max-width: 1280px;
-  margin: 80px auto;
-}
-
-.garden3 {
-  grid-row: span 2;
-}
-
-.yiamarin-sofa {
-  grid-column: span 2;
-}
-
-.photo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 4 / 3;
-  transition: transform 1s var(--ease);
-}
-
-.photo-card img:hover {
-  transform: scale(1.015);
-}
-
-.location img {
-  width: 100%;
-  height: 1005;
 }
 
 /*==== APARTMENTS ==== */
@@ -560,30 +545,6 @@ aside strong {
   align-items: center;
   text-align: center;
   gap: 40px;
-}
-
-.apartments-eyebrow {
-  display: flex;
-  color: var(--muted);
-  align-items: center;
-  text-transform: uppercase;
-  gap: 20px;
-  font-size: 0.8rem;
-  letter-spacing: 0.2rem;
-  margin-bottom: 30px;
-  opacity: 0.8;
-  margin: 0 auto;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
-  text-align: center;
-}
-
-.apartments-eyebrow::before {
-  content: "";
-  width: 40px;
-  height: 1.5px;
-  background: rgba(23, 21, 18, 0.24);
 }
 
 .apt-typography h2 {
@@ -660,16 +621,6 @@ aside strong {
   z-index: 3;
 }
 
-.apt-h3-eyebrow {
-  display: flex;
-  width: 40px;
-  position: absolute;
-  bottom: 12px;
-  left: 10px;
-  border-bottom: 1px solid #f5edd8;
-  z-index: 4;
-}
-
 .apartment-details p {
   font-size: 1rem;
   color: var(--muted);
@@ -693,24 +644,19 @@ aside strong {
   align-items: center;
   justify-content: center;
   align-self: center;
+  stroke-width: 1;
 }
-
-/*
-.apartment-link {
-  justify-content: center;
-  text-align: center;
-}*/
 
 .cozy-cottage a,
 .yiamarin a {
   gap: 8px;
-  font-size: var(1rem, 3vw, 1.5rem);
+  font-size: 0.9rem;
   text-decoration: none;
   font-weight: 400;
   letter-spacing: var(--medium-spacing);
   color: var(--muted);
   display: inline-flex;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 /*==== THE LOCATION ==== */
@@ -859,7 +805,7 @@ aside strong {
   padding: 80px 0;
   justify-content: center;
   align-items: center;
-  height: 100dvh;
+  height: 100%;
   background: #e7e0d240;
 }
 
@@ -880,33 +826,6 @@ aside strong {
   margin: 0 auto;
   text-align: center;
   gap: 20px;
-}
-
-.nearby-eyebrow {
-  display: flex;
-  color: var(--muted);
-  text-transform: uppercase;
-  gap: 10px;
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  opacity: 0.8;
-  align-self: center;
-}
-
-.nearby-eyebrow::before {
-  content: "";
-  width: 30px;
-  height: 1px;
-  align-self: center;
-  background: rgba(23, 21, 18, 0.24);
-}
-
-.nearby-eyebrow::after {
-  content: "";
-  width: 30px;
-  height: 1px;
-  align-self: center;
-  background: rgba(23, 21, 18, 0.24);
 }
 
 .nearby-typography h2 {
@@ -961,7 +880,7 @@ aside strong {
 .nearby-places p {
   align-self: flex-start;
   font-weight: 300;
-  font-size: clamp(1rem, 3vw, 1rem);
+  font-size: 1rem;
   color: var(--muted);
   letter-spacing: var(--medium-spacing);
   margin-top: 5px;
@@ -1004,25 +923,19 @@ aside strong {
   color: white;
 }
 
-.book-eyebrow {
+.book-typography {
   display: flex;
-  color: var(--muted);
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-  justify-content: center;
-  text-transform: uppercase;
-  gap: 10px;
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  margin-bottom: 30px;
-  opacity: 0.8;
 }
 
-.book-eyebrow::before {
-  content: "";
-  width: 40px;
-  height: 1px;
-  background: var(--muted);
+.book .eyebrow-center {
+  color: #c9bba8;
+}
+
+.book .eyebrow-center::before,
+.book .eyebrow-center::after {
+  background: rgba(245, 240, 232, 0.3);
 }
 
 .book-typography h2 {
@@ -1061,7 +974,7 @@ aside strong {
   gap: 20px;
 }
 
-.book-apartments span {
+.apartment-number {
   text-transform: uppercase;
   font-size: 0.7rem;
   font-family: "Jost", sans-serif;
@@ -1072,7 +985,7 @@ aside strong {
 
 .book-cozy h3,
 .book-yiamarin h3 {
-  font-size: var(1.3rem, 4vw, 1.7rem);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
   color: #f5f0e8;
   font-weight: 400;
 }
@@ -1185,6 +1098,469 @@ footer {
   fill: var(--muted);
   display: none;
   margin-top: 5px;
+}
+
+/*==== APARTMENTS SUBPAGE ====*/
+.apt-hero {
+  padding: 180px 0 80px 0;
+}
+
+.apt-hero-wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 3.5fr;
+  gap: clamp(60px, 8vw, 200px);
+}
+
+.apt-hero-typography h1 {
+  font-size: clamp(6rem, 8vw, 7rem);
+  max-width: 12ch;
+  line-height: 1.1;
+}
+
+.apt-hero-paragraph {
+  opacity: 0.65;
+  letter-spacing: var(--medium-spacing);
+  max-width: 40ch;
+  line-height: 1.6;
+  margin-top: 40px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.apt-hero-details {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+  width: fit-content;
+}
+
+.apt-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.apt-hero-icon {
+  align-items: center;
+  align-self: center;
+  color: var(--muted);
+  margin-bottom: 10px;
+  width: 20px;
+}
+
+.apt-details span {
+  align-items: center;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.details-naming {
+  font-size: 0.6rem;
+  color: var(--muted);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.apt-details-divider {
+  height: auto;
+  background: rgba(23, 21, 18, 0.15);
+  width: 1px;
+}
+
+.apt-hero-cta {
+  margin-top: 50px;
+}
+
+.apt-hero-cta {
+  display: flex;
+  gap: 20px;
+}
+
+.apt-hero-img {
+  width: 100%;
+  height: 100%;
+}
+
+.apt-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 20% center;
+}
+
+/*==== PHOTO STACK ====*/
+.photo-stack {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 6px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+  padding-bottom: 80px;
+}
+
+.photo-stack-item {
+  overflow: hidden;
+}
+
+.photo-strip-item.tall {
+  grid-row: span 2;
+}
+
+.photo-stack-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1s var(--ease);
+  aspect-ratio: 4/3;
+}
+
+.photo-strip-item.tall img {
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 400px;
+}
+
+.photo-strip-item:hover img {
+  transform: scale(1.03);
+}
+
+/*==== APARTMENT ABOUT ====*/
+.apt-about-section {
+  background: #e7e0d2b4;
+  padding: 100px 0;
+}
+
+.apt-about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(60px, 8vw, 200px);
+}
+
+.apt-about-text {
+  width: 100%;
+}
+
+.apt-about-text h2 {
+  font-size: clamp(3rem, 9vw, 5rem);
+  max-width: 15ch;
+  margin-top: 20px;
+}
+
+.apt-about-paragraph {
+  opacity: 0.65;
+  letter-spacing: var(--medium-spacing);
+  max-width: 40ch;
+  line-height: 1.6;
+  margin-top: 30px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.apt-amenities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 40px;
+  margin-top: auto;
+}
+
+.amenity {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.amenity-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.amenity-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e7e0d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.apt-amenities-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+
+.amenity-text strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1814;
+  letter-spacing: 0.02em;
+}
+
+.amenity-text span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+}
+
+.apt-about-badge {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  background: var(--bg);
+  padding: 20px 28px;
+  box-shadow: var(--shadow-min);
+  text-align: center;
+}
+
+.apt-about-badge strong {
+  display: block;
+  font-family: var(--playfair);
+  font-size: 2rem;
+  font-weight: 300;
+  color: #1a1814;
+  line-height: 1;
+}
+
+.apt-about-badge span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  opacity: 0.8;
+}
+/*==== APT HIGHLIGHTS ====*/
+.apt-highlights {
+  padding: 100px 0;
+}
+
+.apt-highlights-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.apt-highlights-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-top: 20px;
+}
+
+.highlights-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.highlight-card {
+  padding: 40px 36px;
+  background: #e7e0d2b4;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.highlight-card:nth-child(2) {
+  background: #dfd8ca;
+}
+
+.highlight-card h3 {
+  font-family: var(--playfair);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.highlight-card p {
+  font-size: 0.95rem;
+  opacity: 0.65;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+}
+
+/*==== APT BOOK SECTION ====*/
+.apt-book-section {
+  padding: 100px 0;
+  background: #1a1814;
+  text-align: center;
+}
+
+.apt-book-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.apt-book-wrapper h2 {
+  font-family: var(--playfair);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 300;
+  color: #f5edd8;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 30px;
+}
+
+.apt-book-wrapper p {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: #c4b9a8;
+  line-height: 1.7;
+  margin-bottom: 50px;
+  letter-spacing: 0.02em;
+}
+
+.apt-book-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1em 2.2em;
+  background: #f5edd8;
+  color: #1a1814;
+  text-decoration: none;
+  font-family: var(--jost);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: background 0.3s;
+}
+
+.btn-book:hover {
+  background: white;
+}
+
+.btn-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1em 2.2em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f5edd8;
+  text-decoration: none;
+  font-family: var(--jost);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: border-color 0.3s;
+}
+
+.btn-call:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.apt-book-note {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: rgba(245, 237, 216, 0.4);
+  letter-spacing: 0.06em;
+}
+
+/*==== OTHER APARTMENT SECTION ====*/
+.apt-other {
+  padding: 100px 0;
+  background: var(--bg);
+  border-top: 1px solid rgba(23, 21, 18, 0.08);
+}
+
+.apt-other-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.apt-other-text small {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.apt-other-text h2 {
+  font-size: clamp(3rem, 9vw, 5rem);
+  max-width: 15ch;
+  margin-top: 20px;
+}
+
+.apt-other-text p {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 50px;
+  letter-spacing: 0.02em;
+  max-width: 40ch;
+}
+
+.apt-other-image {
+  width: 340px;
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.apt-other-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease);
+}
+
+.apt-other-image:hover img {
+  transform: scale(1.04);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #1a1814;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 2px;
+  transition: border-color 0.3s;
+}
+
+.text-link:hover {
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+.apt-book-note a {
+  color: #dfd8ca;
 }
 
 @media (max-width: 1024px) {
@@ -1471,6 +1847,16 @@ footer {
     box-shadow: 0 18px 40px rgba(19, 17, 14, 0.3);
     border: var(--image-border);
     overflow: hidden;
+  }
+
+  /*==== NEARBY 768 ====*/
+  .nearby-places-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nearby-places p {
+    text-align: start;
   }
 
   /*==== BOOK 768 ====*/
