@@ -16,7 +16,8 @@ hamburgerBtn.addEventListener("click", () => {
 const navLinks = document.querySelectorAll(".nav-menu a");
 for (let link of navLinks) {
   link.addEventListener("click", () => {
-    navBar.classList.remove("nav-wrapper-open");
+    navBar.classList.remove("nav-menu-open");
     document.body.classList.remove("no-scroll");
+    hamburgerBtn.classList.remove("hamburger-button-open");
   });
 }

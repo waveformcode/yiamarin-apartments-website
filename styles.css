@@ -66,7 +66,7 @@ h2 {
 .apt-hero-paragraph,
 .apt-about-paragraph {
   font-family: "Jost", sans-serif;
-  font-size: clamp(1rem, 5vw, 1.2rem);
+  font-size: clamp(1rem, 5vw, 1.1rem);
   font-weight: 400;
   opacity: 0.7;
   letter-spacing: var(--small-spacing);
@@ -157,7 +157,7 @@ h2 {
   background-color: #1f1f1f;
   color: white;
   border: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -169,7 +169,7 @@ h2 {
   justify-content: center;
   padding: 0.85em 1.8em;
   border: 1px solid #00000033;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-decoration: none;
   color: black;
   text-transform: uppercase;
@@ -303,29 +303,6 @@ nav li a {
   letter-spacing: var(--small-spacing);
   max-width: 42ch;
   margin-top: 60px;
-}
-
-.hero-trust {
-  display: flex;
-  margin-top: 40px;
-  display: none;
-}
-
-.hero-star {
-  display: flex;
-  align-self: center;
-
-  margin-right: 10px;
-  height: 18px;
-  color: #c09162a1;
-}
-
-.hero-superhost {
-  font-size: clamp(1rem, 5vw, 1rem);
-  color: var(--gray);
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 0.1rem;
 }
 
 .hero-cta {
@@ -491,7 +468,7 @@ aside strong {
   color: rgba(23, 21, 18, 0.35);
   padding-right: 30px;
   letter-spacing: 0.2rem;
-  font-size: clamp(0.9rem, 3vw, 1.3rem);
+  font-size: 0.9rem;
 }
 
 .stay-highlights strong {
@@ -814,8 +791,7 @@ aside strong {
   grid-template-rows: 1fr;
   gap: clamp(40px, 10vw, 50px);
   margin: 0 auto;
-  justify-content: center;
-  text-align: center;
+
   max-width: 100dvw;
   padding-inline: clamp(1rem, 4vw, 3rem);
 }
@@ -974,6 +950,11 @@ aside strong {
   gap: 20px;
 }
 
+.book-cozy .btn-book,
+.book-yiamarin .btn-book {
+  padding: 1em 2em;
+}
+
 .apartment-number {
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -1038,6 +1019,7 @@ aside strong {
 footer {
   width: 100%;
   background-color: rgb(25, 25, 25);
+  padding: 20px 0;
 }
 
 .footer-nav {
@@ -1203,7 +1185,7 @@ footer {
   overflow: hidden;
 }
 
-.photo-strip-item.tall {
+.photo-stack-item.tall {
   grid-row: span 2;
 }
 
@@ -1216,13 +1198,13 @@ footer {
   aspect-ratio: 4/3;
 }
 
-.photo-strip-item.tall img {
+.photo-stack-item.tall img {
   aspect-ratio: auto;
   height: 100%;
   min-height: 400px;
 }
 
-.photo-strip-item:hover img {
+.photo-stack-item:hover img {
   transform: scale(1.03);
 }
 
@@ -1339,6 +1321,9 @@ footer {
 }
 
 .apt-highlights-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-bottom: 70px;
 }
@@ -1515,7 +1500,7 @@ footer {
   font-size: clamp(1rem, 2vw, 1.1rem);
   color: var(--muted);
   line-height: 1.7;
-  margin-bottom: 50px;
+  margin: 30px 0 50px 0;
   letter-spacing: 0.02em;
   max-width: 40ch;
 }
@@ -1526,6 +1511,7 @@ footer {
   overflow: hidden;
   flex-shrink: 0;
   position: relative;
+  box-shadow: var(--shadow-mid);
 }
 
 .apt-other-image img {
@@ -1577,7 +1563,7 @@ footer {
     padding-top: 0;
   }
 
-  .eyebrow-hero {
+  .hero-typography .eyebrow {
     display: none;
   }
 
@@ -1770,6 +1756,7 @@ footer {
     height: 100dvh;
     padding-top: 100px;
     opacity: 0;
+    pointer-events: none;
   }
 
   .nav-menu a {
@@ -1778,6 +1765,7 @@ footer {
 
   .nav-menu-open {
     opacity: 1;
+    pointer-events: auto;
   }
 
   .logo {
